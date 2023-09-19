@@ -1,0 +1,55 @@
+CATATAN :
+- express.js adalah third party Modul
+- npm init
+- npm install express
+- npm install nodemon --save-dev
+- melakukan setting express, nodemon dan basic routing
+
+===============================================
+
+PEMBAHASAN :
+
+    // CORE PACKAGE/MODULE
+    const http = require('http');
+
+    // OUR OWN PACKAGE/MODUL
+
+    // THIRD PACKAGE/MODULE
+    const express = require('express');
+---------------------------------------------
+    Method ------ function & callback ------
+    app.get('/', function (req, res) {
+        res.send('Hello World')
+    })
+
+    app.listen(3000)
+---------------------------------------------
+    npm install nodemon --save-dev : dengan nodemon kita bisa auto restart server kita ketika kita save 
+    npm uninstal nodemon : untuk menguninstal package 
+---------------------------------------------
+    tambahkan :
+        "start": "node app.js",
+        "dev": "nodemon app.js",
+    pada file package.json
+---------------------------------------------
+    // Format HTML
+// app.get('/', (req, res) => {
+//     res.send('Hello World!!!')
+// })
+
+// Format JSON
+// Basic Routing di express
+app.get('/', (req, res) => {
+    // resAPI
+    res.status(200).json({
+        message : "Hello FSW2"
+    })
+})
+
+app.post('/', (req, res) => {
+    // resAPI
+    res.status(200).send('ini API untuk contoh POST')
+})
+----------------------------------------------
+Rules dari sebuah API adalah : ('/api/v1/tours')
+(201) : created
