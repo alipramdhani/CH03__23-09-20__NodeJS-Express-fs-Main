@@ -2,6 +2,7 @@ CATATAN :
 - express.js adalah third party Modul
 - npm init
 - npm install express
+- npm run dev
 - npm install nodemon --save-dev
 - melakukan setting express, nodemon dan basic routing
 
@@ -53,3 +54,77 @@ app.post('/', (req, res) => {
 ----------------------------------------------
 Rules dari sebuah API adalah : ('/api/v1/tours')
 (201) : created
+
+-----------------------------------------------
+kemarin
+- penjelasan Express
+- postman
+- setting express dan basic routing
+- API dan rest API
+- membuat REST API CRUD dengan fs module dan node js express
+
+-----------------------------------------------
+- membuat sebuah function untuk merapihkan struktur code.
+- refactor routing code di node js express
+- extension di vs code (prettier)
+- setting prettier di vs code kita
+- default formater_prettier-code
+- https://prettier.io/docs/en/options.html#print-width
+{
+    "semi": false,
+    "tabWidth": 4,
+    "printWidth": 50
+}
+- http://expressjs.com/en/guide/using-middleware.html
+- http://expressjs.com/en/resources/middleware.html
+fungsi middleware untuk node.js adalah biar ga terjadi proses secara bersamaan yang padahal fungsinya berbeda-beda
+- refactor routing code di node js express
+- extension di vs code (prettier)
+- setting prettier di vs code kita
+- penjelasan middleware dan request response cycle API
+- membuat dan menggunakan middleware sendiri
+- install morgan sebagai middleware function dan menggunakannya di API kita
+
+const tourRouter = express.Router()
+const userRouter = express.Router()
+
+// ROUTES UNTUK TOUERS
+tourRouter
+  .route("/")
+  .get(getAllTours)
+  .post(createTour)
+
+tourRouter
+  .route("/:id")
+  .get(getTourById)
+  .patch(editTour)
+  .delete(removeTour)
+
+// ROUTES UNTUK USERS
+userRouter
+  .route("/")
+  .get(getAllUsers)
+  .post(createUser)
+
+userRouter
+  .route("/:id")
+  .get(getUserById)
+  .patch(editUser)
+  .delete(removeUser)
+
+app.use("/api/v1/tours", tourRouter)
+app.use("/api/v1/users", userRouter)
+-----------------------------------------
+catatan : 20-09-2023
+- refactor routing code di node js express
+- extension di vs code (prettier)
+- setting prettier di vs code kita
+- penjelasan middleware dan request response cycle API
+- membuat dan menggunakan middleware sendiri
+- install morgan sebagai middleware function dan menggunakannya di API kita
+- membuat rest API CRUD kembali
+- refactor routing multiple resource/router
+-------------------------------------------
+daily task nya :
+create REST API CRUD Users, data nya di users.json
+refactor routing di 2 resource tersebut
