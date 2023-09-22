@@ -323,7 +323,7 @@ const removeUser = (req, res) => {
 const tourRouter = express.Router()
 const userRouter = express.Router()
 
-// ROUTE UNTUK TOURS
+// ---ROUTE UNTUK TOURS ---
 tourRouter
     .route("/")
     .get(getAlltours)
@@ -335,7 +335,7 @@ tourRouter
     .patch(editTour)
     .delete(removeTour)
 
-// ROUTE UNTUK TOURS
+// --- ROUTE UNTUK TOURS ---
 
 userRouter
     .route("/")
